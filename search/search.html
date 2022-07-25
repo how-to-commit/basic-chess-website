@@ -14,6 +14,9 @@
     <!-- page specific stylesheet -->
     <link rel="stylesheet" href="../styles/search.css">
 
+    <!-- search js -->
+    <script src="./search.js"></script>
+
     <title>Chess Openings DB - Search</title>
 </head>
 
@@ -40,9 +43,13 @@
     <!-- search bar -->
     <div class="input-group rounded col-sm-8 searchbar">
         <input placeholder="Search" id="search" class="form-control rounded">
-        <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button>
+        <button type="submit" id="searchbtn" class="btn btn-primary"><i class="bi bi-search"></i></button>
     </div>
 
+    <script>
+        document.getElementById("searchbtn").addEventListener("click", event => search(document.getElementById("search").value));
+    </script>
+    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
