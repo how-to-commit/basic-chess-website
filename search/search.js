@@ -2,12 +2,12 @@ const sitemap =
 {
     "Main": {
         "moves": [],
-        "link": "./index.html"
+        "link": "./../index.html"
     },
 
     "Search": {
         "moves": [],
-        "link": "./search/search.html"
+        "link": "./search.html"
     },
 
     "Scandinavian Defense": {
