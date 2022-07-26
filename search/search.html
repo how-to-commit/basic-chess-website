@@ -29,7 +29,7 @@
                     <a class="nav-link" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./search/search.html">Search</a>
+                    <a class="nav-link active" href="#">Search</a>
                 </li>
             </ul>
         </div>
@@ -41,13 +41,23 @@
     </div>
 
     <!-- search bar -->
-    <div class="input-group rounded col-sm-8 searchbar">
+    <div class="input-group rounded search">
         <input placeholder="Search" id="search" class="form-control rounded">
         <button type="submit" id="searchbtn" class="btn btn-primary"><i class="bi bi-search"></i></button>
     </div>
 
+    <!-- insert search results here -->
+    <div class="results" id="search-results"></div>
+
+    <!-- add listeners to search -->
     <script>
-        document.getElementById("searchbtn").addEventListener("click", event => search(document.getElementById("search").value));
+        searchElement = document.getElementById("search")
+        // add listener to search button
+        document.getElementById("searchbtn").addEventListener("click", () => search(searchElement.value));
+        // add listener to enter key
+        searchElement.addEventListener("keydown", (event) => {
+            if (event.key == "Enter") search(searchElement.value)
+        });
     </script>
     
     <!-- Bootstrap JS -->
