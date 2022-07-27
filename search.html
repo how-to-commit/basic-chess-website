@@ -13,6 +13,8 @@
 
     <!-- page specific stylesheet -->
     <link rel="stylesheet" href="./styles/search.css">
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="./styles/style.css">
 
     <!-- search js -->
     <script src="./scripts/search.js"></script>
@@ -20,14 +22,17 @@
     <title>Chess Openings DB - Search</title>
 </head>
 
-<body>
+<body class="bg-img text-light">
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">Chess Openings DB</a>
+            <a class="navbar-brand">Chess Openings DB</a>
             <ul class="nav navbar-nav me-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Search</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Search</a>
                 </li>
             </ul>
         </div>
@@ -35,7 +40,7 @@
 
     <!-- logo/text before searchbar -->
     <div class="logotext">
-        <h1>Search Openings in the Database</h1>
+        <h1 class="display-2">Search Openings in the Database</h1>
     </div>
 
     <!-- search bar -->

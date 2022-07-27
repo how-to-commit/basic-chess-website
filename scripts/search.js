@@ -10,14 +10,14 @@ const pages =
         "link": "./search.html"
     },
 
-    "Scandinavian Defense": {
+    "Scandinavian Defense - Mainline": {
         "moves": [
             "e4", "d5", "exd5"
         ],
         "link": "./openings/scandinavian_defense/mainline.html"
     },
 
-    "Queen's Gambit": {
+    "Queen's Gambit - Mainline": {
         "moves": [
             "d4", "d5", "c4"
         ],
@@ -32,7 +32,7 @@ function search(str) {
 
     const results = [];
     for (let page in pages) {
-        if (page.toLowerCase().includes(str) || pages[page]["moves"].indexOf(str) != -1) {
+        if (page.toLowerCase().includes(str) || pages[page]["moves"].join().replace(/,/g, " ").toLowerCase().includes(str)) {
             results.push(page);
         }
     }
@@ -62,6 +62,7 @@ function search(str) {
             
             // fill resultLink fields
             resultLink.href = pages[result]["link"];
+            resultLink.classList.add("link-light") //light with bootstrap
             resultLink.innerText = result
 
             resultPara.appendChild(resultLink);
@@ -71,5 +72,4 @@ function search(str) {
             resultSpan.appendChild(document.createElement("hr"));
         }
     }
-    console.log(results);
 }

@@ -7,19 +7,24 @@
 
     <!-- Bootstrap stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="./styles/style.css">
 
     <title>Chess Openings DB</title>
 </head>
 
-<body>
+<body class="bg-img text-light">
     <!-- navbar -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Chess Openings DB</a>
             <ul class="nav navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./search.html">Search</a>
                 </li>
@@ -28,11 +33,13 @@
     </nav>
 
     <!-- main body of the page -->
-    <div class="d-flex justify-content-center align-content-center">
-        <!-- random page -->
-        <p>Random page: <span id="randomPage"></span></p>
+    <div class="d-flex flex-column min-vh-100 min-vw-100">
+        <div class="d-flex flex-grow-1 flex-column justify-content-center align-items-center align-middle">
+            <h1 class="display-1 site-main-pg">Welcome to Chess Openings DB!</h1> 
+            <p class="lead text-center">This website contains many Chess openings that you can use to up your game. <br>
+            Click the link at the top to go to the search engine where you can search by move and name!</p>
+        </div>
     </div>
-
     <!-- randomPage js -->
     <script src="./scripts/index_randomPage.js"></script>
 

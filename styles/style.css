@@ -1,0 +1,22 @@
+.bg-img {
+    /* this is needed or the background will be offset by a few pixels at the top */
+    overflow: auto;
+    position: relative;
+}
+
+.bg-img::before {
+    content: "";
+    position: fixed;
+    left: -5%;
+    top: -5%;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background-image: url('./../images/playingchess.jpg');
+    background-size:cover;
+    width: 110%;
+    height: 110%;
+
+    filter: blur(10px) brightness(0.5);
+}

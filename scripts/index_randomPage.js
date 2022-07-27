@@ -7,14 +7,14 @@ function randFromObj(obj) {
 
 const pages = 
 {
-    "Scandinavian Defense": {
+    "Scandinavian Defense - Mainline": {
         "moves": [
             "e4", "d5", "exd5"
         ],
         "link": "./openings/scandinavian_defense/mainline.html"
     },
 
-    "Queen's Gambit": {
+    "Queen's Gambit - Mainline": {
         "moves": [
             "d4", "d5", "c4"
         ],
