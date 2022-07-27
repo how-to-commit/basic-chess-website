@@ -1,8 +1,8 @@
-const sitemap = 
+const pages = 
 {
     "Main": {
         "moves": [],
-        "link": "./../index.html"
+        "link": "./index.html"
     },
 
     "Search": {
@@ -14,14 +14,14 @@ const sitemap =
         "moves": [
             "e4", "d5", "exd5"
         ],
-        "link": "tests"
+        "link": "./openings/scandinavian_defense/mainline.html"
     },
 
     "Queen's Gambit": {
         "moves": [
             "d4", "d5", "c4"
         ],
-        "link": "testq"
+        "link": "./openings/queens_gambit/mainline.html"
     }
 };
 
@@ -31,8 +31,8 @@ function search(str) {
     str = str.trim().toLowerCase();
 
     const results = [];
-    for (let page in sitemap) {
-        if (page.toLowerCase().includes(str) || sitemap[page]["moves"].indexOf(str) != -1) {
+    for (let page in pages) {
+        if (page.toLowerCase().includes(str) || pages[page]["moves"].indexOf(str) != -1) {
             results.push(page);
         }
     }
@@ -61,7 +61,7 @@ function search(str) {
             const resultLink = document.createElement("a");
             
             // fill resultLink fields
-            resultLink.href = sitemap[result]["link"];
+            resultLink.href = pages[result]["link"];
             resultLink.innerText = result
 
             resultPara.appendChild(resultLink);
