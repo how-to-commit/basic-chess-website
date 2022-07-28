@@ -1,40 +1,27 @@
-function randFromObj(obj) {
-    // select random object from pages
-    // and return the name
-    let keys = Object.keys(obj);
-    return keys[Math.round(Math.random() * keys.length) - 1];
+// MUST HAVE /scripts/pages.js SOURCED BEFOREHAND
+
+function randFromArr(arr) {
+    // select random name from list
+    return arr[Math.floor(Math.random() * arr.length)];
 }
 
-const pages = 
-{
-    "Scandinavian Defense - Mainline": {
-        "moves": [
-            "e4", "d5", "exd5"
-        ],
-        "link": "./openings/scandinavian_defense/mainline.html"
-    },
-
-    "Queen's Gambit - Mainline": {
-        "moves": [
-            "d4", "d5", "c4"
-        ],
-        "link": "./openings/queens_gambit/mainline.html"
-    }
-};
+// remove disallowed page names
+const rp_disallowed_pages = ["Homepage", "Search"];
+const rp_allowed_pages = Object.keys(pages)
+    .filter(name => !rp_disallowed_pages.includes(name));
 
 // get the right element
 let randomPage = document.getElementById("randomPage");
 
-// select object >> randFromObject returns the name of the object,
-let selected = randFromObj(pages); 
+// select obj
+let selected = randFromArr(rp_allowed_pages); 
 
 // create element
-let node = document.createElement("p");
-let innerLinkNode = document.createElement("a");
+let randLink = document.createElement("a");
 
-// fill innerLinkNode fields before appending
-innerLinkNode.href = pages[selected]["link"];
-innerLinkNode.innerText = selected;
+// fill randLink fields before appending
+randLink.href = pages[selected]["link"];
+randLink.classList.add("link-light")
+randLink.innerText = selected;
 
-node.appendChild(innerLinkNode);
-randomPage.appendChild(node);
+randomPage.appendChild(randLink);

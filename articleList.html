@@ -26,7 +26,7 @@
             <a class="navbar-brand" href="#">Chess Openings DB</a>
             <ul class="nav navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="./index.html">Home</a>
+                    <a class="nav-link" href="./index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./search.html">Search</a>
@@ -36,22 +36,10 @@
     </nav>
 
     <!-- main body of the page -->
-    <div class="d-flex flex-column min-vh-100 min-vw-100">
-        <div class="d-flex flex-grow-1 flex-column justify-content-center align-items-center align-middle">
-            <h1 class="display-1 site-main-pg">Welcome to Chess Openings DB!</h1> 
-            <p class="lead text-center">This website contains many Chess openings that you can use to up your game. <br>
-            Click the link at the top to go to the search engine where you can search by move and name!</p>
-            <table>
-                <tr> 
-                    <td class="pull-left pe-5">Random Page: <span id="randomPage"></span></td>
-                    <td class="pull-right ps-5"><a href="./articleList.html" class="link-light">List of Article</a><td>
-                </tr>
-            </table>
-        </div>
-    </div>
+    <ul id="article-list" class="ms-5"></ul>
 
-    <!-- randomPage js -->
-    <script src="./scripts/index_randomPage.js"></script>
+    <!-- dynamic page script -->
+    <script src="./scripts/articleList.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

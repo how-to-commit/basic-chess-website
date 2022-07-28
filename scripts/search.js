@@ -1,42 +1,17 @@
-const pages = 
-{
-    "Main": {
-        "moves": [],
-        "link": "./index.html"
-    },
+// MUST HAVE /scripts/pages.js SOURCED BEFOREHAND
 
-    "Search": {
-        "moves": [],
-        "link": "./search.html"
-    },
-
-    "Scandinavian Defense - Mainline": {
-        "moves": [
-            "e4", "d5", "exd5"
-        ],
-        "link": "./openings/scandinavian_defense/mainline.html"
-    },
-
-    "Queen's Gambit - Mainline": {
-        "moves": [
-            "d4", "d5", "c4"
-        ],
-        "link": "./openings/queens_gambit/mainline.html"
-    }
-};
-
-
-function search(str) {
+function search(str) {  
     // filter input
     str = str.trim().toLowerCase();
-
-    const results = [];
-    for (let page in pages) {
-        if (page.toLowerCase().includes(str) || pages[page]["moves"].join().replace(/,/g, " ").toLowerCase().includes(str)) {
-            results.push(page);
+    
+    const results = [];    // declare arr here to leave blank for later if query has nothing
+    if (str.length != 0) { // only run the search if the query has characters
+        for (let page in pages) {
+            if (page.toLowerCase().includes(str) || pages[page]["moves"].join().replace(/,/g, " ").toLowerCase().includes(str)) {
+                results.push(page);
+            }
         }
     }
-
     const resultSpan = document.getElementById("search-results");
 
     // clear all results from previous search
@@ -46,9 +21,9 @@ function search(str) {
 
     // loop through results to display
     if (results.length == 0) {
-        // if no results
+        // if no results or query has no characters ->
         const resultPara = document.createElement("p");
-        resultPara.innerText = "Whoops! Nothing here. Try another name?"
+        resultPara.innerText = "Whoops! Nothing here. Try another name or another move?"
         resultSpan.appendChild(resultPara);
 
         // hr

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./styles/style.css">
 
     <!-- search js -->
+    <script src="./scripts/pages.js"></script>
     <script src="./scripts/search.js"></script>
 
     <title>Chess Openings DB - Search</title>
@@ -40,7 +41,7 @@
 
     <!-- logo/text before searchbar -->
     <div class="logotext">
-        <h1 class="display-2">Search Openings in the Database</h1>
+        <h1 class="display-2">Search openings by name or move:</h1>
     </div>
 
     <!-- search bar -->
@@ -60,7 +61,7 @@
         document.getElementById("searchbtn").addEventListener("click", () => search(searchElement.value));
         // add listener to enter key
         searchElement.addEventListener("keydown", (event) => {
-            if (event.key == "Enter") search(searchElement.value)
+            if (event.key == "Enter") search(searchElement.value);
         });
     </script>
     
