@@ -1,7 +1,3 @@
-const TEST = "1Q6/5pk1/2p3p1/1p2N2p/1b5P/1bn5/2r3P1/2K5"
-
-
-
 function fenToBoard(fen) {
     fen = fen.split("/");
     let board = "";
@@ -19,63 +15,44 @@ function fenToBoard(fen) {
         }
         board = board + "\n";
     }
+    board = board.slice(0, board.length-1);
 
-    return board.slice(0, board.length-1);
+    return HTMLBoard(board);
 }
 
 
-function HTMLRenderBoard(board) {
-    // font used has to be merida
+function HTMLBoard(board) {
+    // font used: merida
+    let rawhtml = "8"; // start w/ row number 8
+    let rowChar = 8;
+    let bgColour = true; // true is light, false is dark
 
-    let rawhtml = "\u{E317}"; // start w/ row number 1
-    let rowChar = 0xE317;
-    let bgState = true; // false is light, true is dark
-
-
-    // hell: where i change the letters to chars from merida
+    // change FEN notation to the charcodes
     for (let char of board) {
-        debugger;
         if (char === "\n") { // we add newline and rownum here
-            console.log("here")
             rowChar = rowChar - 1;
-            rawhtml = rawhtml + "<br>" + String.fromCharCode(rowChar);
+            rawhtml = rawhtml + "<br>" + rowChar;
         } else {
-            // black magic appears here >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            const pieceMap = 'kqrbnp';
-
-            // light sq codes start with E1, black starts with 26, and codes r 4digit
-            let pieceChar = bgState ? 0xE150 : 0x2650;
-
-            if (char > 'A' && char < 'Z') { // White pieces are upper
-                pieceChar = pieceChar + 0x4 + pieceMap.toUpperCase().indexOf(char);
-            } else if (char > 'a' && char < 'z') {
-                pieceChar = pieceChar + 0xA + pieceMap.toLowerCase().indexOf(char);
+            // codepoint offset is calculated here through a combination of numbers
+            // pieces is a string of letters that represent both side's pieces in the order that they appear.
+            // 0x00A0 is whitespace, 0xE100 is dark sq
+            // 0x2654 is where light sq pieces start, 0xE154 is where dark pieces start
+            let pieceChar;
+            const pieces = 'KQRBNPkqrbnp';
+            if (char == " ") {
+                pieceChar = bgColour ? 0xA0 : 0xE100;
             } else {
-                pieceChar = bgState ? 0x00A0 : 0xE100;
+                pieceChar = bgColour ? (0x2654 + pieces.indexOf(char)) : (0xE154 + pieces.indexOf(char));
             }
-            // black magic ends here <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
             rawhtml = rawhtml + String.fromCharCode(pieceChar);
-            
         }
-        bgState = !bgState;
+        // flip sq colour
+        bgColour = !bgColour;
     }
 
-    // next, we add style and tags
-    // rmb this will be from /openings/*/*
-    let style = `<style>
-    @font-face {
-        font-family: "merida";
-        src: url("./fonts/chess_merida_unicode.ttf");
-    }
-
-    .chessb {
-        font-family: "merida";
-        line-height: 1em;
-    }
-    </style>
-    `
-    let htmlRender = style + "<div class='chessb'>" + rawhtml + "</div>";
-    return htmlRender;
+    // insert column indicator
+    rawhtml = rawhtml + "<br>&nbsp;abcdefgh";
+    
+    return rawhtml;
 }
-
-document.getElementById("chess").innerHTML = HTMLRenderBoard(fenToBoard(TEST));

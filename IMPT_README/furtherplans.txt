@@ -1,4 +1,0 @@
-implement moves in the openings w carousel>
-https://getbootstrap.com/docs/5.2/components/carousel/
-
-use empty space at the bottom of the main page to put buttons to search by tag (attack, defense) and random article

@@ -7,7 +7,7 @@ function search(str) {
     const results = [];    // declare arr here to leave blank for later if query has nothing
     if (str.length != 0) { // only run the search if the query has characters
         for (let page in pages) {
-            if (page.toLowerCase().includes(str) || pages[page]["moves"].join().replace(/,/g, " ").toLowerCase().includes(str)) {
+            if (page.toLowerCase().includes(str) || str.split(' ').every((e) => pages[page]["moves"].map((f) => f.toLowerCase()).includes(e))) {
                 results.push(page);
             }
         }

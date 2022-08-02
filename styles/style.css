@@ -32,5 +32,9 @@
 
 .centre-text-article {
     width: 50%;
-    padding-left: 5%;
+    margin-left: 5%;
+}
+
+.article-margin-top {
+    margin-top: 2%;
 }
