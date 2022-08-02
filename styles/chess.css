@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "merida";
+    src: url("./../fonts/chess_merida_unicode.ttf");
+}
+
+.chess {
+    font-family: "merida";
+    line-height: 1em;
+    font-size: 2em;
+    margin-right: 2%;
+    padding-top: 5px;
+    padding-right: 5px;
+    color: black;
+    background-color: #8d8aa5;
+    border: 2px solid #ccc;
+    float: right;
+}

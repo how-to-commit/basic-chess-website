@@ -1,5 +1,4 @@
 .bg-img {
-    /* this is needed or the background will be offset by a few pixels at the top */
     overflow: auto;
     position: relative;
 }
@@ -31,6 +30,11 @@
     text-align: center;
 }
 
-.centre-title {
-    margin-top: 45%;
+.centre-text-article {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.article-margin-top {
+    margin-top: 2%;
 }

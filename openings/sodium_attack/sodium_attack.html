@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <!-- main stylesheet -->
+    <link rel="stylesheet" href="./../../styles/style.css">
+    <!-- page stylesheet -->
+    <link rel="stylesheet" href="./../../styles/chess.css">
+
+    <!-- scripts -->
+    <script src="./../../scripts/pages.js"></script>
+    <script src="./../../scripts/chess.js"></script>
+
+    <title>Chess Openings DB - Sodium Attack</title>
+</head>
+
+<body class="bg-img text-light">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Chess Openings DB</a>
+            <ul class="nav navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./../../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./../../search.html">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./../../articleList.html">List of Articles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- main body of the page -->
+    <div class="centre-bg min-vh-100">
+
+        <!-- page content -->
+        <h1 class="display-3 ms-5 centre-text">The Sodium Attack</h1>
+
+        <div class="mt-5 d-flex flex-column">
+            <!-- pt1 -->
+            <div class="float-left mt-1 mb-1">
+                <div id="chess1" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <p>The Sodium Attack ("Sodium", as the algebraic notation of the first move is Na3, Na being the chemical symbol for sodium), sometimes called the Dirkin Opening, is rarely played. It does naught to enhance white's position, though some sources consider it to be better than its reputation.</p>
+                    <p>The Sodium Attack generally follows this move order.</p>
+                    <ol type="1">
+                        <li>Na3</li>
+                    </ol>
+                    <p>After 1. Na3, black's best option generally is 1...d5 as white's queenside knight cannot threaten d5 while being on a3, though other moves like 1...e5 and 1...g6 (to fianchetto the dark square bishop) are viable.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- part 2 -->
+            <div class="float-left mt-1 mb-1">
+                <div id="chess2" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <h1>1...d5</h1>
+                    <ol type="1">
+                        <li>..d5</li>
+                        <li>c4</li>
+                    </ol>
+                    <p>After 1...d5, world champion Magnus Carlsen has made 2. c4 a viable option for white, immediately threatening black's central control with a pawn defended by the knight.</p>
+                </div>
+            </div>
+
+    <!-- chessboard script -->
+    <script>
+        // 1st board
+        let fen1 = "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR";
+        document.getElementById("chess1").innerHTML = fenToBoard(fen1);
+        // 2nd board
+        let fen2 = "rnbqkbnr/ppp1pppp/8/3p4/2P5/N7/PP1PPPPP/R1BQKBNR";
+        document.getElementById("chess2").innerHTML = fenToBoard(fen2);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

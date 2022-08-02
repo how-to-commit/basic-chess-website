@@ -10,11 +10,18 @@ const pages =
         "link": "./search.html"
     },
 
-    "Scandinavian Defense - Mainline": {
+    "Scandinavian Defense": {
         "moves": [
-            "e4", "d5", "exd5"
+            "e4", "d5", "exd5", "Qa5", "Qd8"
         ],
-        "link": "./openings/scandinavian_defense/mainline.html"
+        "link": "./openings/scandinavian_defense/scandinavian.html"
+    },
+
+    "Sodium Attack (Durkin Opening)": {
+        "moves": [
+            "Na3"
+        ],
+        "link": "./openings/sodium_attack/sodium_attack.html"
     },
 
     "Queen's Gambit - Mainline": {
