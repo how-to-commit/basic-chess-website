@@ -19,7 +19,7 @@
     <script src="./../../scripts/pages.js"></script>
     <script src="./../../scripts/chess.js"></script>
 
-    <title>Chess Openings DB - Sodium Attack</title>
+    <title>Chess Openings DB - Two Knights Defense</title>
 </head>
 
 <body class="bg-img text-light">
@@ -45,7 +45,7 @@
     <div class="centre-bg min-vh-100">
 
         <!-- page content -->
-        <h1 class="display-3 ms-5 centre-text">The Sodium Attack</h1>
+        <h1 class="display-3 ms-5 centre-text">Two Knights Defense</h1>
 
         <div class="mt-5 d-flex flex-column">
             <!-- pt1 -->
@@ -53,12 +53,12 @@
                 <div id="mainline" class="chess"></div>
 
                 <div class="centre-text-article">
-                    <p>The Sodium Attack ("Sodium", as the algebraic notation of the first move is Na3, Na being the chemical symbol for sodium), sometimes called the Dirkin Opening, is rarely played. It does naught to enhance white's position, though some sources consider it to be better than its reputation.</p>
-                    <p>The Sodium Attack generally follows this move order.</p>
+                    <p>The Two Knights Defense is an aggressive counter to the Italian Game.</p>
                     <ol type="1">
-                        <li>Na3</li>
+                        <li>e4 e5</li>
+                        <li>Nf3 Nc6</li>
+                        <li>Bc4 Nf6</li>
                     </ol>
-                    <p>After 1. Na3, black's best option generally is 1...d5 as white's queenside knight cannot threaten d5 while being on a3, though other moves like 1...e5 and 1...g6 (to fianchetto the dark square bishop) are viable.</p>
                 </div>
             </div>
 
@@ -66,23 +66,24 @@
 
             <!-- part 2 -->
             <div class="float-left mt-1 mb-1">
-                <div id="magnusCarlsen_c4" class="chess"></div>
+                <div id="d4" class="chess"></div>
 
                 <div class="centre-text-article">
-                    <h1>1...d5</h1>
-                    <ol type="1">
-                        <li>Na3 d5</li>
-                        <li>c4</li>
+                    <h1>4. d4</h1>
+                    <p>d4 threatens black's centre while also freeing white's dark squared bishop, allowing for quick development.</p>
+                    <p>The only credible response to d4 for black is exd4.</p>
+                    <ol type="1" start="4">
+                        <li>d4 exd4</li>
                     </ol>
-                    <p>After 1...d5, world champion Magnus Carlsen has made 2. c4 a viable option for white, immediately threatening black's central control with a pawn defended by the knight.</p>
+                    <p>This position is familiar to certain lines of the <a href="./../scotch_game/scotch_game.html" class="link-light">Scotch Gambit</a>.</p>
                 </div>
             </div>
 
     <!-- chessboard script -->
     <script>
         let boards = {
-            "mainline": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR",
-            "magnusCarlsen_c4": "rnbqkbnr/ppp1pppp/8/3p4/2P5/N7/PP1PPPPP/R1BQKBNR"
+            "mainline": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R",
+            "d4": "r1bqkb1r/pppp1ppp/2n2n2/8/2BpP3/5N2/PPP2PPP/RNBQK2R"
         };
 
         fillBoards(boards);

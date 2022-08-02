@@ -19,7 +19,7 @@
     <script src="./../../scripts/pages.js"></script>
     <script src="./../../scripts/chess.js"></script>
 
-    <title>Chess Openings DB - Sodium Attack</title>
+    <title>Chess Openings DB - Scotch Game</title>
 </head>
 
 <body class="bg-img text-light">
@@ -45,7 +45,7 @@
     <div class="centre-bg min-vh-100">
 
         <!-- page content -->
-        <h1 class="display-3 ms-5 centre-text">The Sodium Attack</h1>
+        <h1 class="display-3 ms-5 centre-text">The Scotch Game</h1>
 
         <div class="mt-5 d-flex flex-column">
             <!-- pt1 -->
@@ -53,38 +53,71 @@
                 <div id="mainline" class="chess"></div>
 
                 <div class="centre-text-article">
-                    <p>The Sodium Attack ("Sodium", as the algebraic notation of the first move is Na3, Na being the chemical symbol for sodium), sometimes called the Dirkin Opening, is rarely played. It does naught to enhance white's position, though some sources consider it to be better than its reputation.</p>
-                    <p>The Sodium Attack generally follows this move order.</p>
+                    <p>The Scotch Game is an opening characterised by the move d4, in an attempt to threaten black's e5 pawn. This move is extremely aggressive (one of the most aggressive options in the Open Game!) and often results in an open centre.</p>
                     <ol type="1">
-                        <li>Na3</li>
+                        <li>e4 e5</li>
+                        <li>Nf3 Nc6</li>
+                        <li>d4</li>
                     </ol>
-                    <p>After 1. Na3, black's best option generally is 1...d5 as white's queenside knight cannot threaten d5 while being on a3, though other moves like 1...e5 and 1...g6 (to fianchetto the dark square bishop) are viable.</p>
+                </div>
+            </div>
+            
+            <!-- part 2 -->
+            <div class="float-left mt-1 mb-1">
+                <div id="d4" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <p>After 3. d4, the best move for black is exd4, though Nxd4 is also playable.</p>
+                    <p>White will almost always play Nxd4 to take the pawn back, but this can transition into gambit lines with 4. Bc4 or 4. c3, to attempt to develop quickly.</p>
+                    <ol type="1" start="3">
+                        <li>d4 exd4</li>
+                        <li>Nxd4</li>
+                    </ol>
                 </div>
             </div>
 
             <hr>
 
-            <!-- part 2 -->
+            <!-- part 3 -->
             <div class="float-left mt-1 mb-1">
-                <div id="magnusCarlsen_c4" class="chess"></div>
-
+                <div id="bc5" class="chess"></div>
+                
                 <div class="centre-text-article">
-                    <h1>1...d5</h1>
-                    <ol type="1">
-                        <li>Na3 d5</li>
-                        <li>c4</li>
+                    <h1>4...Bc5</h1>
+                    <p>Bc5 immediately attacks the knight on d4 and builds pressure on the weak f2 pawn, which black can threaten in the future with Qf6.</p>
+                    <p>White's move here is Be3, defending the knight and the f2 pawn while also threatening to win a piece with Nxc6 dxc6 (if black responds with Bxe3, Nxd8 wins the black queen) Bxc5.</p>
+                    <ol type="1" start="4">
+                        <li>Nxd4 Bc5</li>
+                        <li>Be3</li>
                     </ol>
-                    <p>After 1...d5, world champion Magnus Carlsen has made 2. c4 a viable option for white, immediately threatening black's central control with a pawn defended by the knight.</p>
                 </div>
             </div>
+
+            <hr>
+
+            <!-- part 4 -->
+            <div class="float-left mt-1 mb-1">
+                <div id="nf6" class="chess"></div>
+                
+                <div class="centre-text-article">
+                    <h1>4...Nf6</h1>
+                    <p>Nf6 immediately attacks white's central control by attacking white's central pawn.</p>
+                    <ol type="1" start="4">
+                        <li>Nxd4 Nf6</li>
+                    </ol>
+                </div>
+            </div>
+
+
 
     <!-- chessboard script -->
     <script>
         let boards = {
-            "mainline": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR",
-            "magnusCarlsen_c4": "rnbqkbnr/ppp1pppp/8/3p4/2P5/N7/PP1PPPPP/R1BQKBNR"
+            "mainline": "r1bqkbnr/pppp1ppp/2n5/4p3/3PP3/5N2/PPP2PPP/RNBQKB1R", 
+            "d4":"r1bqkbnr/pppp1ppp/2n5/8/3pP3/5N2/PPP2PPP/RNBQKB1R",
+            "bc5":"r1bqk1nr/pppp1ppp/2n5/2b5/3NP3/4B3/PPP2PPP/RN1QKB1R",
+            "nf6": "r1bqkb1r/pppp1ppp/2n2n2/8/3NP3/8/PPP2PPP/RNBQKB1R"
         };
-
         fillBoards(boards);
     </script>
 

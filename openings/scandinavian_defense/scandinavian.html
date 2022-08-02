@@ -50,7 +50,7 @@
         <div class="mt-5 d-flex flex-column">
             <!-- pt1 -->
             <div class="float-left mt-1 mb-1">
-                <div id="chess1" class="chess"></div>
+                <div id="mainline" class="chess"></div>
 
                 <div class="centre-text-article">
                     <p>The goal of this defense is to force white into an open game, by directly threatening white's e4 pawn. This immediately breaks the center open and forces white to respond immediately.</p>
@@ -68,7 +68,7 @@
 
             <!-- part 2 -->
             <div class="float-left mt-1 mb-1">
-                <div id="chess2" class="chess"></div>
+                <div id="classical" class="chess"></div>
 
                 <div class="centre-text-article">
                     <h1>3...Qa5 (The Classical Scandinavian)</h1>
@@ -80,7 +80,7 @@
 
             <!-- part 3 -->
             <div class="float-left mt-1 mb-1">
-                <div id="chess3" class="chess"></div>
+                <div id="qd8" class="chess"></div>
 
                 <div class="centre-text-article">
                     <h1>3...Qd8</h1>
@@ -92,16 +92,13 @@
 
     <!-- chessboard script -->
     <script>
-        // 1st board
-        let fen1 = "rnb1kbnr/ppp1pppp/8/3q4/8/2N5/PPPP1PPP/R1BQKBNR";
-        document.getElementById("chess1").innerHTML = fenToBoard(fen1);
+        let boards = {
+            "mainline": "rnb1kbnr/ppp1pppp/8/3q4/8/2N5/PPPP1PPP/R1BQKBNR",
+            "classical": "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR",
+            "qd8": "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR"
+        };
 
-        // 2nd board
-        let fen2 = "rnb1kbnr/ppp1pppp/8/q7/8/2N5/PPPP1PPP/R1BQKBNR"
-        document.getElementById("chess2").innerHTML = fenToBoard(fen2);
-
-        let fen3 = "rnbqkbnr/ppp1pppp/8/8/8/2N5/PPPP1PPP/R1BQKBNR"
-        document.getElementById("chess3").innerHTML = fenToBoard(fen3);
+        fillBoards(boards);
     </script>
 
     <!-- Bootstrap JS -->

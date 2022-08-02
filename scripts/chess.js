@@ -36,7 +36,7 @@ function HTMLBoard(board) {
             // codepoint offset is calculated here through a combination of numbers
             // pieces is a string of letters that represent both side's pieces in the order that they appear.
             // 0x00A0 is whitespace, 0xE100 is dark sq
-            // 0x2654 is where light sq pieces start, 0xE154 is where dark pieces start
+            // 0x2654 is where light sq pieces start, 0xE154 is where dark sq pieces start
             let pieceChar;
             const pieces = 'KQRBNPkqrbnp';
             if (char == " ") {
@@ -55,4 +55,12 @@ function HTMLBoard(board) {
     rawhtml = rawhtml + "<br>&nbsp;abcdefgh";
     
     return rawhtml;
+}
+
+function fillBoards(boards) {
+    // take input of an object containing element id: fen board
+    // to fill all ids with the corresp board.
+    for (let e of Object.keys(boards)) {
+        document.getElementById(e).innerHTML = fenToBoard(boards[e]);
+    }
 }
