@@ -19,7 +19,7 @@
     <script src="./../scripts/pages.js"></script>
     <script src="./../scripts/chess.js"></script>
 
-    <title>Chess Openings DB - Sodium Attack</title>
+    <title>Chess Openings DB - Fried Liver Attack</title>
 </head>
 
 <body class="bg-img text-light">
@@ -45,7 +45,7 @@
     <div class="centre-bg min-vh-100">
 
         <!-- page content -->
-        <h1 class="display-3 ms-5 centre-text">The Sodium Attack</h1>
+        <h1 class="display-3 ms-5 centre-text">The Fried Liver Attack</h1>
 
         <div class="mt-5 d-flex flex-column">
             <!-- pt1 -->
@@ -53,12 +53,14 @@
                 <div id="mainline" class="chess"></div>
 
                 <div class="centre-text-article">
-                    <p>The Sodium Attack ("Sodium", as the algebraic notation of the first move is Na3, Na being the chemical symbol for sodium), sometimes called the Dirkin Opening, is rarely played. It does naught to enhance white's position, though some sources consider it to be better than its reputation.</p>
-                    <p>The Sodium Attack generally follows this move order.</p>
+                    <p>The Fried Liver Attack is a variation of the Two Knights Defense where white moves his knight twice and threatens a fork on the weak f7 square, protected by white's light squared bishop.</p>
                     <ol type="1">
-                        <li>Na3</li>
+                        <li>e4 e5</li>
+                        <li>Nf3 Nc6</li>
+                        <li>Bc4 Nf6</li>
+                        <li>Ng5</li>
                     </ol>
-                    <p>After 1. Na3, black's best option generally is 1...d5 as white's queenside knight cannot threaten d5 while being on a3, though other moves like 1...e5 and 1...g6 (to fianchetto the dark square bishop) are viable.</p>
+                    <p>This variation of the Two Knights Defense has been considered weak in the past, as black, with perfect play, should be able to develop faster than white in this situation. However, it can be argued that white's attack on f7 now essentially wins a pawn by force after either Kxf7 or Bxf7.</p>
                 </div>
             </div>
 
@@ -66,23 +68,73 @@
 
             <!-- part 2 -->
             <div class="float-left mt-1 mb-1">
-                <div id="magnusCarlsen_c4" class="chess"></div>
+                <div id="d5" class="chess"></div>
 
                 <div class="centre-text-article">
-                    <h1>1...d5</h1>
-                    <ol type="1">
-                        <li>Na3 d5</li>
-                        <li>c4</li>
+                    <h1>4...d5</h1>
+                    <p>This move is a natural way for black to block white's bishop and thus stop his attempt to win the f7 pawn.</p>
+                    <ol type="1" start="4">
+                        <li>Ng5 d5</li>
+                        <li>exd5</li>
                     </ol>
-                    <p>After 1...d5, world champion Magnus Carlsen has made 2. c4 a viable option for white, immediately threatening black's central control with a pawn defended by the knight.</p>
+                    <p>After white plays exd5, black has a multitude of options that can lead to diverse tactical outcomes.</p>
                 </div>
             </div>
 
+            <!-- part 2b: Polerio Defense-->
+            <div class="float-left mt-1 mb-1">
+                <div id="polerioDefense" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <h2>5...Na5</h2>
+                    <p>This is black's most common move. After exd5, black moves his knight to the edge of the board and threatens white's bishop.</p>
+                    <ol type="1" start="5">
+                        <li>exd5 Na5</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="float-left mt-1 mb-1">
+                <div id="polerio-bB5+" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <h2>6. Bb5+</h2>
+                    <p>White's best response in this situation is Bb5+, attacking white's king and escaping the knight at the same time.</p>
+                    <p>Black plays c6 in an attempt to dislodge white's strong light squared bishop from the b5 square and block check.</p>
+                    <p>At this point, the exchange dxc6 and bxc6 are practically forced, and white is forced to either give up the b5 square or double down with Qf3, pinning the c6 pawn to black's queenside rook and prevent white's light squared bishop from being taken.</p>
+                    <ol>
+                        <li>Bb5+ c6</li>
+                        <li>dxc6 bxc6</li>
+                    </ol>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- part 3: the traxler -->
+            <div class="float-left mt-1 mb-1">
+                <div id="traxler" class="chess"></div>
+
+                <div class="centre-text-article">
+                    <h1>4...Bc5 (The Traxler Counterattack/Wilkes-Barre Variation)</h1>
+                    <p>The Traxler is a very interesting and sharp variation of the Fried Liver. Black completely ignores white's threats to the f7 square and instead attempts to launch a counterattack of his own.</p>
+                    <ol type="1" start="4">
+                        <li>Ng5 Bc5</li>
+                    </ol>
+                    <p> If white were to play Nxf7, black can sacrifice his bishop with Bxf2+ and quickly mate white with his queen and knight.</p>
+                    <p>In this situation, instead of Nxf7, white should play Bxf7+ and lead to a calmer game where white still has an edge.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- chessboard script -->
     <script>
         let boards = {
-            "mainline": "rnbqkbnr/pppppppp/8/8/8/N7/PPPPPPPP/R1BQKBNR",
-            "magnusCarlsen_c4": "rnbqkbnr/ppp1pppp/8/3p4/2P5/N7/PP1PPPPP/R1BQKBNR"
+            "mainline": "r1bqkb1r/pppp1ppp/2n2n2/4p1N1/2B1P3/8/PPPP1PPP/RNBQK2R",
+            "d5": "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R",
+            "polerioDefense": "r1bqkb1r/ppp2ppp/5n2/n2Pp1N1/2B5/8/PPPP1PPP/RNBQK2R",
+            "polerio-bB5+": "r1bqkb1r/p4ppp/2p2n2/nB2p1N1/8/8/PPPP1PPP/RNBQK2R",
+            "traxler": "r1bqk2r/pppp1ppp/2n2n2/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R"
         };
 
         fillBoards(boards);
